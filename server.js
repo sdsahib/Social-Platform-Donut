@@ -1,5 +1,5 @@
 const express=require('express');
-const route=require('./routes/route.js')
+const route=require('./routes/login.routes.js')
 const profile=require('./routes/profile.js')
 const mongoose=require('mongoose');
 const passport=require('passport');
@@ -9,7 +9,8 @@ const cookie=require('cookie-session');
 const socket=require('socket.io');
 const user=require('./schema/user.js');
 const proj=require('./schema/project.js');
-const notification=require('./schema/notification.js')
+const notification=require('./schema/notification.js');
+const indexRoutes = require('./routes/index.routes');
 mongoose.connect('mongodb://uphaar:caped23@ds121461.mlab.com:21461/codeuino',function(){
   console.log('connected');
 })
@@ -26,8 +27,10 @@ app.use(cookie({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(route);
-app.use(profile);
+
+app.use(indexRoutes);
+
+
 
 
 var ser=app.listen(3000,function(){
