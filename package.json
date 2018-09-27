@@ -4,6 +4,7 @@
   "description": "A social plateform by codeuino",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Capedcrusader23",

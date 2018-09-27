@@ -8,9 +8,6 @@ const route=express.Router();
 
 //get request
 
-route.get('/',function(req,res){
-  res.render('all');
-})
 
 
 route.get('/google',passport.authenticate('google',{scope:['profile']}));

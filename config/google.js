@@ -15,7 +15,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(
   new google(
     {
-      callbackURL: '/google/redirect',
+      callbackURL: '/auth/google/redirect',
       clientID: key.oauth.clientID,
       clientSecret: key.oauth.clientSecret
     },
