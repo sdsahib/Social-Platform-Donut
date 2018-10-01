@@ -16,7 +16,7 @@ route.get('/google/redirect',passport.authenticate('google'),function(req,res){
 
 
 
-    res.redirect('/profile/:id');
+    res.redirect('/profile/profile/:id');
 
 })
 

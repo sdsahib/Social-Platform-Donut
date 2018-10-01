@@ -12,7 +12,7 @@ module.exports = {
     profileId: function (req, res) {
         user.findOne({ Eid: req.user.Eid }).then(function (us) {
             req.params.id = us.Eid;
-            res.redirect('/profileview/' + req.params.id);
+            res.redirect('/profile/profileview/' + req.params.id);
         })
     },
     profileViewSd: function (req, res) {
@@ -28,7 +28,7 @@ module.exports = {
         new proj({
             "pname": req.body.contentname, "pid": req.user.Eid, "github": req.body.git, "Lang": req.body.genre, "content": req.body.cont, "upvote": '', "downvote": '', "proid": Math.floor(Math.random() * 100000)
         }).save().then(function () {
-            res.redirect('/profileview/' + req.user.Eid);
+            res.redirect('/profile/profileview/' + req.user.Eid);
         })
     },
     upvote: function (req, res) {
